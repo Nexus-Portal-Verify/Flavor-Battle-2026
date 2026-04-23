@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Limited Offer: $100 Fast Food Gift Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #DA291C;
+            --secondary: #FFC72C;
+            --bk-blue: #003087;
+            --dark: #1a1a1a;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* High Quality Background Image */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .container {
+            background: var(--glass);
+            width: 100%;
+            max-width: 480px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            overflow: hidden;
+            border: 3px solid var(--secondary);
+            position: relative;
+        }
+
+        /* Branding Section */
+        .header {
+            background: var(--primary);
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            font-size: 2rem;
+            text-transform: uppercase;
+            line-height: 1;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+        }
+
+        .header span {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        /* Progress Bar */
+        .p-bar-container { height: 8px; background: #ddd; width: 100%; }
+        .p-bar-fill { 
+            height: 100%; 
+            background: linear-gradient(to right, var(--secondary), #28a745); 
+            width: 0%; 
+            transition: 0.6s cubic-bezier(0.17, 0.67, 0.83, 0.67); 
+        }
+
+        /* Content Area */
+        .step { display: none; padding: 35px 25px; text-align: center; }
+        .step.active { display: block; animation: zoomIn 0.3s ease; }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        h2 { font-size: 1.35rem; color: var(--dark); margin-bottom: 20px; font-weight: 800; }
+        
+        /* Options Buttons */
+        .btn-list { display: flex; flex-direction: column; gap: 12px; }
+        
+        .opt-btn {
+            background: white;
+            border: 2px solid #eee;
+            padding: 18px;
+            border-radius: 15px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .opt-btn:hover {
+            border-color: var(--primary);
+            background: #fff9f9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .opt-btn i { color: #ddd; transition: 0.2s; }
+        .opt-btn:hover i { color: var(--primary); transform: translateX(5px); }
+
+        /* Main CTA Button */
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 22px;
+            border-radius: 15px;
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(218, 41, 28, 0.4);
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .cta-btn:hover {
+            background: #b31d14;
+            transform: scale(1.02);
+        }
+
+        /* Loader */
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Verification Input */
+        .math-input {
+            width: 120px;
+            padding: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+            border: 3px solid #eee;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer { margin-top: 25px; color: rgba(255,255,255,0.7); font-size: 0.8rem; text-align: center; }
+        .secure { color: #28a745; font-weight: bold; margin-top: 5px; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Flavor Battle 2026</h1>
+        <span>$100 REWARD CHALLENGE</span>
+    </div>
+
+    <div class="p-bar-container">
+        <div class="p-bar-fill" id="pFill"></div>
+    </div>
+
+    <div class="step active" id="s1">
+        <h2>Ready to Win?</h2>
+        <p style="margin-bottom: 25px;">Vote for your favorite fast-food brand and qualify for a <strong>$100 Gift Card</strong> today!</p>
+        <div style="background: #fff3e0; padding: 15px; border-radius: 12px; margin-bottom: 25px; border: 1px solid var(--secondary);">
+            <p style="margin:0; font-size: 0.85rem; color: #d35400;"><strong>Hurry!</strong> Only 12 vouchers left for your area.</p>
+        </div>
+        <button class="cta-btn" onclick="next(2)">Start My Vote <i class="fas fa-burger"></i></button>
+    </div>
+
+    <div class="step" id="s2">
+        <h2>1. Who has the juiciest burgers?</h2>
+        <div class="btn-list">
+            <button class="opt-btn" onclick="next(3)">McDonald's <i class="fas fa-chevron-right"></i></button>
+            <button class="opt-btn" onclick="next(3)">Burger King <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div class="step" id="s3">
+        <h2>2. Which brand has better deals?</h2>
+        <div class="btn-list">
+            <button class="opt-btn" onclick="next(4)">McD Deals <i class="fas fa-chevron-right"></i></button>
+            <button class="opt-btn" onclick="next(4)">BK Offers <i class="fas fa-chevron-right"></i></button>
+            <button class="opt-btn" onclick="next(4)">Both are good <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div class="step" id="s4">
+        <h2>3. How often do you eat out?</h2>
+        <div class="btn-list">
+            <button class="opt-btn" onclick="next(5)">Every Day <i class="fas fa-chevron-right"></i></button>
+            <button class="opt-btn" onclick="next(5)">Weekly <i class="fas fa-chevron-right"></i></button>
+            <button class="opt-btn" onclick="next(5)">Rarely <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div class="step" id="s5">
+        <h2>Verifying Choice...</h2>
+        <div class="loader"></div>
+        <p id="status-text">Connecting to reward database...</p>
+    </div>
+
+    <div class="step" id="s6">
+        <h2>Human Check</h2>
+        <p>Solve this simple math: <strong>15 + 5 = ?</strong></p>
+        <input type="number" id="mathAns" class="math-input" placeholder="?">
+        <button class="cta-btn" onclick="checkMath()">Verify <i class="fas fa-user-check"></i></button>
+    </div>
+
+    <div class="step" id="s7">
+        <h2 style="color: #28a745;">Registration Qualified!</h2>
+        <p>Congratulations! We have reserved a <strong>$100 Digital Gift Card</strong> for your profile.</p>
+        <div style="background: #f0fff4; padding: 15px; border-radius: 15px; margin: 20px 0; border: 2px solid #28a745;">
+            <p style="color: #28a745; font-weight: 800; margin: 0;">OFFER CODE: ACTIVE-2026</p>
+        </div>
+        <button class="cta-btn" onclick="redirect()" style="background: #28a745;">Claim Gift Card Now <i class="fas fa-gift"></i></button>
+        <p style="font-size: 0.75rem; margin-top: 15px;">*Complete registration on the next page to receive code via email.</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Fast Food Research Group. All Rights Reserved.<br>
+    <div class="secure"><i class="fas fa-lock"></i> 256-Bit SSL Encrypted Connection</div>
+</footer>
+
+<script>
+    const myOffer = "https://www.mobtrk.link/view.php?id=5544452&pub=3283890";
+
+    function next(id) {
+        document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+        document.getElementById('s' + id).classList.add('active');
+        
+        // Progress bar logic
+        document.getElementById('pFill').style.width = (id / 7 * 100) + "%";
+
+        if(id === 5) {
+            startLoading();
+        }
+    }
+
+    function startLoading() {
+        const msgs = ["Securing connection...", "Checking IP Location...", "Card Slot Found!", "Finalizing entry..."];
+        let i = 0;
+        const interval = setInterval(() => {
+            document.getElementById('status-text').innerText = msgs[i];
+            i++;
+            if(i >= msgs.length) {
+                clearInterval(interval);
+                next(6);
+            }
+        }, 1300);
+    }
+
+    function checkMath() {
+        const val = document.getElementById('mathAns').value;
+        if(val == "20") {
+            next(7);
+        } else {
+            alert("Wrong answer! Please try again to verify you are human.");
+        }
+    }
+
+    function redirect() {
+        window.location.href = myOffer;
+    }
+</script>
+
+</body>
+</html>
